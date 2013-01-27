@@ -27,7 +27,7 @@ and optional pairs of:
   'taxonomies'    => array(''),
   'has_archive'   => true,  
   'rewrite'       => '' 
-'''
+```
 
 For example, to create a custom post type of **Cat**:
 
