@@ -4,8 +4,8 @@
   lt3 Custom Post Types
   
 ------------------------------------------------
-	Version:   1.0
-	Notes:
+  Version:   1.0
+  Notes:
 
   For more information about registering Post Types:
   http://codex.wordpress.org/Function_Reference/register_post_type
