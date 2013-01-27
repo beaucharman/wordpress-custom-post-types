@@ -13,9 +13,11 @@
   For information about setting up custom columns:
   http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/
 
-  You can also turn the custom post types declarations into a plugin. for more information: http://codex.wordpress.org/Writing_a_Plugin
+  You can also turn the custom post types declarations into a plugin. 
+  For more information: http://codex.wordpress.org/Writing_a_Plugin
   
-  To declare a custom post type, simply add a new custom post type array to the `$custom_post_types` master array, with required key and value pairs of:
+  To declare a custom post type, simply add a new custom post type array to the 
+  `$custom_post_types` master array, with required key and value pairs of:
     'slug_singluar' => '',
     'slug_plural'   => '',
     'name_singular' => '',
