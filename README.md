@@ -1,5 +1,4 @@
-WordPress-Custom-Post-Types
-===========================
+# WordPress-Custom-Post-Types
 
 A php script to help generate, register and maintain WordPress custom post types easily.
 
@@ -10,6 +9,8 @@ For more information about registering Post Types, visit the [WordPress Codex](h
 For information about setting up custom columns, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
 You can also turn the custom post types declaration into a plugin. For more information: http://codex.wordpress.org/Writing_a_Plugin
+
+### Usage
   
 To declare a custom post type, simply add a new custom post type array to the `$custom_post_types` master array, with required key and value pairs of:
 

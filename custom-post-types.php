@@ -4,8 +4,9 @@
   lt3 Custom Post Types
   
 ------------------------------------------------
-  Version:   1.0
-  Notes:
+  custom-post-types.php 1.0 
+  Sunday, 27th January 2013
+  Beau Charman | @beaucharman | http://beaucharman.me
 
   For more information about registering Post Types:
   http://codex.wordpress.org/Function_Reference/register_post_type
