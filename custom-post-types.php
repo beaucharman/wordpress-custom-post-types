@@ -66,7 +66,7 @@ function lt3_create_custom_post_types()
       'not_found_in_trash' => __('No '. $cpt['name_plural'] .' found in Trash')
     );
     register_post_type(
-      $cpt['slug_singlular'], array(
+      $cpt['slug_singluar'], array(
         'labels'        => $labels,
         'description'   => ($cpt['description']) ? $cpt['description'] : '',
         'public'        => ($cpt['public']) ? $cpt['public'] : true,
