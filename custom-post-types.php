@@ -18,13 +18,14 @@
   For more information: http://codex.wordpress.org/Writing_a_Plugin
   
   To declare a custom post type, simply add a new custom post type array to the 
-  `$custom_post_types` master array, with required key and value pairs of:
+  `lt3_$custom_post_types` master array, with required key and value pairs of:
+  array(
     'slug_singluar' => '',
     'slug_plural'   => '',
     'name_singular' => '',
     'name_plural'   => '',
   
-  and optional pairs of:       
+  //and optional pairs of:       
     'description'   => '',
     'public'        => true,
     'menu_position' => 20,
@@ -34,6 +35,7 @@
     'taxonomies'    => array(''),
     'has_archive'   => true,  
     'rewrite'       => '' 
+  );
 ------------------------------------------------ */
 
 /* 
@@ -41,7 +43,7 @@
  Declare custom post types
 
 ------------------------------------------------ */
-$custom_post_types = array();
+$lt3_custom_post_types = array();
 
 /*
 
@@ -51,8 +53,8 @@ $custom_post_types = array();
 add_action('init', 'lt3_create_custom_post_types');
 function lt3_create_custom_post_types() 
 {
-  global $custom_post_types;
-  foreach($custom_post_types as $cpt)
+  global $lt3_custom_post_types;
+  foreach($lt3_custom_post_types as $cpt)
   {
     $labels = array(
       'name'               => __($cpt['name_plural']),
@@ -90,9 +92,9 @@ function lt3_create_custom_post_types()
 add_filter('enter_title_here', 'custom_post_type_title_text');
 function custom_post_type_title_text()
 {
-  global $custom_post_types;
+  global $lt3_custom_post_types;
   $screen = get_current_screen();
-  foreach($custom_post_types as $cpt)
+  foreach($lt3_custom_post_types as $cpt)
   {
     if ($cpt['slug_plural'] == $screen->post_type) 
     {
