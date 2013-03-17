@@ -1,10 +1,10 @@
 <?php
-/*	
-  
+/*
+
   lt3 Custom Post Types
-  
+
 ------------------------------------------------
-  custom-post-types.php 1.0 
+  custom-post-types.php 2.0
   Sunday, 27th January 2013
   Beau Charman | @beaucharman | http://beaucharman.me
 
@@ -14,18 +14,18 @@
   For information about setting up custom columns:
   http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/
 
-  You can also turn the custom post types declarations into a plugin. 
+  You can also turn the custom post types declarations into a plugin.
   For more information: http://codex.wordpress.org/Writing_a_Plugin
-  
-  To declare a custom post type, simply add a new custom post type array to the 
+
+  To declare a custom post type, simply add a new custom post type array to the
   `lt3_$custom_post_types` master array, with required key and value pairs of:
   array(
     'slug_singluar' => '',
     'slug_plural'   => '',
     'name_singular' => '',
     'name_plural'   => '',
-  
-  //and optional pairs of:       
+
+  //and optional pairs of:
     'description'   => '',
     'public'        => true,
     'menu_position' => 20,
@@ -33,12 +33,12 @@
     'hierarchical'  => true,
     'supports'      => array(''),
     'taxonomies'    => array(''),
-    'has_archive'   => true,  
-    'rewrite'       => '' 
-  );
+    'has_archive'   => true,
+    'rewrite'       => ''
+  )
 ------------------------------------------------ */
 
-/* 
+/*
 
  Declare custom post types
 
@@ -51,7 +51,7 @@ $lt3_custom_post_types = array();
 
 ------------------------------------------------ */
 add_action('init', 'lt3_create_custom_post_types');
-function lt3_create_custom_post_types() 
+function lt3_create_custom_post_types()
 {
   global $lt3_custom_post_types;
   foreach($lt3_custom_post_types as $cpt)
@@ -84,10 +84,10 @@ function lt3_create_custom_post_types()
   }
 }
 
-/* 
+/*
 
   Change title placeholder for custom post types
-  
+
 ------------------------------------------------ */
 add_filter('enter_title_here', 'custom_post_type_title_text');
 function custom_post_type_title_text()
@@ -96,7 +96,7 @@ function custom_post_type_title_text()
   $screen = get_current_screen();
   foreach($lt3_custom_post_types as $cpt)
   {
-    if ($cpt['slug_plural'] == $screen->post_type) 
+    if ($cpt['slug_plural'] == $screen->post_type)
     {
       $title = 'Enter '. $cpt['name_singular'] .' Title Here';
       break;
@@ -105,13 +105,13 @@ function custom_post_type_title_text()
   return $title;
 }
 
-/* 
+/*
 
   Flush permalink rewrites after creating custom post types and taxonomies
-  
+
 ------------------------------------------------ */
 // add_action('init', 'lt3_post_type_and_taxonomy_flush_rewrites');
-function lt3_post_type_and_taxonomy_flush_rewrites() 
+function lt3_post_type_and_taxonomy_flush_rewrites()
 {
   global $wp_rewrite;
   $wp_rewrite->flush_rules();
