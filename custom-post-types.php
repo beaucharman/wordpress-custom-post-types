@@ -23,8 +23,7 @@
   To declare a custom post type, simply add a new custom post type array to the
   `lt3_$custom_post_types` master array, with required key and value pairs of:
   array(
-    'slug_singluar' => '',
-    'slug_plural'   => '',
+    'slug_singular' => '',
     'name_singular' => '',
     'name_plural'   => '',
   //and optional pairs of:
@@ -36,7 +35,7 @@
     'supports'      => array(''),
     'taxonomies'    => array(''),
     'has_archive'   => true,
-    'rewrite'       => ''
+    'rewrite'       => true
   )
 ------------------------------------------------ */
 
@@ -80,7 +79,7 @@ function lt3_create_custom_post_types()
         'supports'         => ($cpt['supports'])      ? $cpt['supports'] : array('title', 'editor', 'thumbnail'),
         'taxonomies'       => ($cpt['taxonomies'])    ? $cpt['taxonomies'] : array(),
         'has_archive'      => ($cpt['has_archive'])   ? $cpt['has_archive'] : true,
-        'rewrite'          => ($cpt['rewrite'])       ? $cpt['rewrite'] : $cpt['name_plural']
+        'rewrite'          => ($cpt['rewrite'])       ? $cpt['rewrite'] : true
       )
     );
   }
@@ -98,7 +97,7 @@ function custom_post_type_title_text()
   $screen = get_current_screen();
   foreach($lt3_custom_post_types_array as $cpt)
   {
-    if ($cpt['slug_plural'] == $screen->post_type)
+    if ($cpt['slug_singular'] == $screen->post_type)
     {
       $title = 'Enter '. $cpt['name_singular'] .' Title Here';
       break;
