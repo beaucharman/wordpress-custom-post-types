@@ -4,9 +4,12 @@
   lt3 Custom Post Types
 
 ------------------------------------------------
-  custom-post-types.php 2.0
-  Sunday, 27th January 2013
-  Beau Charman | @beaucharman | http://beaucharman.me
+  custom-post-types.php
+  @version 2.0 | April 1st 2013
+  @package lt3
+  @author  Beau Charman | @beaucharman | http://beaucharman.me
+  @link    https://github.com/beaucharman/lt3
+  @licence GNU http://www.gnu.org/licenses/lgpl.txt
 
   For more information about registering Post Types:
   http://codex.wordpress.org/Function_Reference/register_post_type
@@ -24,7 +27,6 @@
     'slug_plural'   => '',
     'name_singular' => '',
     'name_plural'   => '',
-
   //and optional pairs of:
     'description'   => '',
     'public'        => true,
@@ -43,7 +45,7 @@
  Declare custom post types
 
 ------------------------------------------------ */
-$lt3_custom_post_types = array();
+$lt3_custom_post_types_array = array();
 
 /*
 
@@ -53,8 +55,8 @@ $lt3_custom_post_types = array();
 add_action('init', 'lt3_create_custom_post_types');
 function lt3_create_custom_post_types()
 {
-  global $lt3_custom_post_types;
-  foreach($lt3_custom_post_types as $cpt)
+  global $lt3_custom_post_types_array;
+  foreach($lt3_custom_post_types_array as $cpt)
   {
     $labels = array(
       'name'               => __($cpt['name_plural']),
@@ -68,17 +70,17 @@ function lt3_create_custom_post_types()
       'not_found_in_trash' => __('No '. $cpt['name_plural'] .' found in Trash')
     );
     register_post_type(
-      $cpt['slug_singluar'], array(
-        'labels'        => $labels,
-        'description'   => ($cpt['description']) ? $cpt['description'] : '',
-        'public'        => ($cpt['public']) ? $cpt['public'] : true,
-        'menu_position' => ($cpt['menu_position']) ? $cpt['menu_position'] : 20,
-        'menu_icon'     => ($cpt['menu_icon']) ? $cpt['menu_icon'] : NULL,
-        'hierarchical'  => ($cpt['hierarchical']) ? $cpt['hierarchical'] : false,
-        'supports'      => ($cpt['supports']) ? $cpt['supports'] : array('title', 'editor', 'thumbnail'),
-        'taxonomies'    => ($cpt['taxonomies']) ? $cpt['taxonomies'] : array(),
-        'has_archive'   => ($cpt['has_archive']) ? $cpt['has_archive'] : true,
-        'rewrite'       => ($cpt['rewrite']) ? $cpt['rewrite'] : $cpt['name_plural']
+      $cpt['slug_singular'], array(
+        'labels'           => $labels,
+        'description'      => ($cpt['description'])   ? $cpt['description'] : '',
+        'public'           => ($cpt['public'])        ? $cpt['public'] : true,
+        'menu_position'    => ($cpt['menu_position']) ? $cpt['menu_position'] : 20,
+        'menu_icon'        => ($cpt['menu_icon'])     ? $cpt['menu_icon'] : NULL,
+        'hierarchical'     => ($cpt['hierarchical'])  ? $cpt['hierarchical'] : false,
+        'supports'         => ($cpt['supports'])      ? $cpt['supports'] : array('title', 'editor', 'thumbnail'),
+        'taxonomies'       => ($cpt['taxonomies'])    ? $cpt['taxonomies'] : array(),
+        'has_archive'      => ($cpt['has_archive'])   ? $cpt['has_archive'] : true,
+        'rewrite'          => ($cpt['rewrite'])       ? $cpt['rewrite'] : $cpt['name_plural']
       )
     );
   }
@@ -92,9 +94,9 @@ function lt3_create_custom_post_types()
 add_filter('enter_title_here', 'custom_post_type_title_text');
 function custom_post_type_title_text()
 {
-  global $lt3_custom_post_types;
+  global $lt3_custom_post_types_array;
   $screen = get_current_screen();
-  foreach($lt3_custom_post_types as $cpt)
+  foreach($lt3_custom_post_types_array as $cpt)
   {
     if ($cpt['slug_plural'] == $screen->post_type)
     {
@@ -110,7 +112,7 @@ function custom_post_type_title_text()
   Flush permalink rewrites after creating custom post types and taxonomies
 
 ------------------------------------------------ */
-// add_action('init', 'lt3_post_type_and_taxonomy_flush_rewrites');
+//add_action('init', 'lt3_post_type_and_taxonomy_flush_rewrites');
 function lt3_post_type_and_taxonomy_flush_rewrites()
 {
   global $wp_rewrite;
