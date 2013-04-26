@@ -10,7 +10,7 @@
  * @license GNU http://www.gnu.org/licenses/lgpl.txt
  *
  * Properties
- *  $PostType->name | sring
+ *  $PostType->name   | string
  *  $PostType->lables | array
  *
  * Methods
@@ -23,48 +23,6 @@
  * To declare a custom post type, simply add a new LT3_Custom_Post_Type class
  * with the following arguments:
  */
-
-/*
-// Required
-$name = '';
-// Optional
-$labels = array(
-  'label_singular' => '',
-  'label_plural'   => '',
-  'menu_label'     => ''
- );
-$options = array(
-  'description'    => '',
-  'public'         => true,
-  'menu_position'  => 20,
-  'menu_icon'      => null,
-  'hierarchical'   => false,
-  'supports'       => array( '' ),
-  'taxonomies'     => array( '' ),
-  'has_archive'    => true,
-  'rewrite'        => true
- );
-$help = array(
-  array(
-    'message'      => ''
-   ),
-  array(
-    'context'      => 'edit',
-    'message'      => ''
-   )
- );
-$PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
-*/
-
-/*
-// Flush permalink rewrites after creating custom post types and taxonomies
-add_action( 'init', 'lt3_post_type_and_taxonomy_flush_rewrites' );
-function lt3_post_type_and_taxonomy_flush_rewrites()
-{
-  global $wp_rewrite;
-  $wp_rewrite->flush_rules();
-}
-*/
 
 /* ------------------------------------------------------------------------
    Custom post type class
@@ -190,6 +148,8 @@ class LT3_Custom_Post_Type
    * get()
    * @param  $user_args | array
    * @return post type data
+   *
+   * Get all entries assigned to this post type.
    * ------------------------------------------------------------------------ */
   public function get( $user_args = array(), $single = false )
   {

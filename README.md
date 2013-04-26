@@ -1,4 +1,4 @@
-# WordPress-Custom-Post-Types
+# WordPress Custom Post Types
 
 A php class to help register and maintain WordPress custom post types easily.
 
