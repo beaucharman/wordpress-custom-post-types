@@ -2,25 +2,34 @@
 
 A php class to help register and maintain WordPress custom post types easily.
 
-Add this to your **functions.php** file, or make it an include file to keep your template files clean.
+Simply include `custom-post-types.php` in your `functions.php` file, and utilise the below functions to create the cas
 
 For more information about registering Post Types, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
 For information about setting up custom columns, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
+## Properties
 
-**Properties**
-  $PostType->name | sring
-  $PostType->lables | array
+**$PostType->name
 
-**Methods**
-  $PostType->get()
-  $PostType->achive_link()
+The post type slug.
 
+**$PostType->lables
+
+A an array of the singular, plural and menu lables.
+
+## Methods
+
+**$PostType->get()**
+
+Get all entries assigned to this post type.
+
+**$PostType->archive_link()**
+
+The the absolute permalink to the post type's archive page.
 
 To declare a custom post type, simply add a new LT3_Custom_Post_Type class
 with the following arguments:
-
 
 ```PHP
 // Required

@@ -15,7 +15,7 @@
  *
  * Methods
  *  $PostType->get()
- *  $PostType->achive_link()
+ *  $PostType->archive_link()
  *
  * For more information on registering post types:
  * http://codex.wordpress.org/Function_Reference/register_post_type
