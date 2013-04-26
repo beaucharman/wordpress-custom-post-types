@@ -1,6 +1,6 @@
 # WordPress-Custom-Post-Types
 
-A php script to help generate, register and maintain WordPress custom post types easily.
+A php class to help register and maintain WordPress custom post types easily.
 
 Add this to your **functions.php** file, or make it an include file to keep your template files clean.
 
@@ -8,47 +8,58 @@ For more information about registering Post Types, visit the [WordPress Codex](h
 
 For information about setting up custom columns, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
-You can also turn the custom post types declaration into a plugin. For more information: http://codex.wordpress.org/Writing_a_Plugin
 
-### Usage
-  
-To declare a custom post type, simply add a new custom post type array to the `$custom_post_types` master array, with required key and value pairs of:
+**Properties**
+  $PostType->name | sring
+  $PostType->lables | array
 
-```php
-  'slug_singluar' => '',
-  'slug_plural'   => '',
-  'name_singular' => '',
-  'name_plural'   => '',
-```
+**Methods**
+  $PostType->get()
+  $PostType->achive_link()
 
-and optional pairs of:
 
-```php
-  'description'   => '',
-  'public'        => true,
-  'menu_position' => 20,
-  'menu_icon'     => NULL,
-  'hierarchical'  => true,
-  'supports'      => array(''),
-  'taxonomies'    => array(''),
-  'has_archive'   => true,  
-  'rewrite'       => '' 
-```
+To declare a custom post type, simply add a new LT3_Custom_Post_Type class
+with the following arguments:
 
-For example, to create a custom post type of **Cat**:
 
-```php
-$custom_post_types = array(
+```PHP
+// Required
+$name = '';
+// Optional
+$labels = array(
+  'label_singular' => '',
+  'label_plural'   => '',
+  'menu_label'     => ''
+ );
+$options = array(
+  'description'    => '',
+  'public'         => true,
+  'menu_position'  => 20,
+  'menu_icon'      => null,
+  'hierarchical'   => false,
+  'supports'       => array( '' ),
+  'taxonomies'     => array( '' ),
+  'has_archive'    => true,
+  'rewrite'        => true
+ );
+$help = array(
   array(
-    'slug_singluar' => 'cat',
-    'slug_plural'   => 'cats',
-    'name_singular' => 'Cat',
-    'name_plural'   => 'Cats',
-    'description'   => 'The Cat post type to store the adventures of various cats',
-    'public'        => true,
-    'menu_position' => 15,
-    'supports'      => array('title', 'editor', 'thumbnail'),
-    'taxonomies'    => array('color', 'breed')
-  )
-);
+    'message'      => ''
+   ),
+  array(
+    'context'      => 'edit',
+    'message'      => ''
+   )
+ );
+$PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
+```
+
+```PHP
+// Flush permalink rewrites after creating custom post types and taxonomies
+add_action( 'init', 'lt3_post_type_and_taxonomy_flush_rewrites' );
+function lt3_post_type_and_taxonomy_flush_rewrites()
+{
+  global $wp_rewrite;
+  $wp_rewrite->flush_rules();
+}
 ```
