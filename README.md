@@ -8,17 +8,17 @@ For more information about registering Post Types, visit the [WordPress Codex](h
 
 For information about setting up custom columns, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
-## Properties
+#### Properties
 
-**$PostType->name
+**$PostType->name**
 
 The post type slug.
 
-**$PostType->lables
+**$PostType->lables**
 
 A an array of the singular, plural and menu lables.
 
-## Methods
+#### Methods
 
 **$PostType->get()**
 
@@ -26,7 +26,9 @@ Get all entries assigned to this post type.
 
 **$PostType->archive_link()**
 
-The the absolute permalink to the post type's archive page.
+Get the absolute permalink to the post type's archive page.
+
+### Usage
 
 To declare a custom post type, simply add a new LT3_Custom_Post_Type class
 with the following arguments:
