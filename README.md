@@ -10,7 +10,7 @@ For information about setting up custom admin columns, have a read of [this arti
 
 Include `custom-post-types.php` in your `functions.php` file.
 
-Declare the various argument arrays to set the nerw post type up as needed (`$name` is required):
+Declare the various argument arrays to setup the new post type as needed (`$name` is required):
 
 ```PHP
 // Required
