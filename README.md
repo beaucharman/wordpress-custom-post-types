@@ -1,8 +1,6 @@
 # WordPress Custom Post Types
 
-A php class to help register and maintain WordPress custom post types easily.
-
-Simply include `custom-post-types.php` in your `functions.php` file, and utilise the below functions to create the cas
+A php class to help register and maintain WordPress custom post types easily. It also comes with some rad built in properties and methods that can be used in templates to maintain clean code modular development.
 
 For more information about registering Post Types, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
@@ -30,18 +28,22 @@ Get the absolute permalink to the post type's archive page.
 
 ### Usage
 
-To declare a custom post type, simply add a new LT3_Custom_Post_Type class
-with the following arguments:
+
+Include `custom-post-types.php` in your `functions.php` file.
+
+Then, to declare a custom post type, simply create a variable (for future refernce, but is not required) that is an instance of the `LT3_Custom_Post_Type` class, with the following arguments:
 
 ```PHP
 // Required
 $name = '';
+
 // Optional
 $labels = array(
   'label_singular' => '',
   'label_plural'   => '',
   'menu_label'     => ''
  );
+
 $options = array(
   'description'    => '',
   'public'         => true,
@@ -53,6 +55,7 @@ $options = array(
   'has_archive'    => true,
   'rewrite'        => true
  );
+
 $help = array(
   array(
     'message'      => ''
@@ -61,12 +64,14 @@ $help = array(
     'context'      => 'edit',
     'message'      => ''
    )
- );
+);
+
 $PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
 ```
 
+If there are issues with permalinks and the new post types, even after flushing them in the administrator area (Settings > Permalinks > Save Changes) use the following function to flush permalink rewrites after creating custom post types and taxonomies.
+
 ```PHP
-// Flush permalink rewrites after creating custom post types and taxonomies
 add_action( 'init', 'lt3_post_type_and_taxonomy_flush_rewrites' );
 function lt3_post_type_and_taxonomy_flush_rewrites()
 {
