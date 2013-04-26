@@ -97,7 +97,4 @@ For example:
 $post_types = $PostType->get();
 ```
 
-
-
-
-
+**Note:** A declaration of `global $PostType;` might be required on some template files.
