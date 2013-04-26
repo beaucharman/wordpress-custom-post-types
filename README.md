@@ -1,6 +1,6 @@
 # WordPress Custom Post Types
 
-A php class to help register and maintain WordPress custom post types easily. It also comes with some rad built in properties and methods that can be used in templates to maintain clean code modular development.
+A PHP class to help register and maintain WordPress custom post types easily. It also comes with some rad built in properties and methods that can be used in templates to maintain clean code modular development.
 
 For more information about registering Post Types, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
@@ -67,7 +67,7 @@ function lt3_post_type_and_taxonomy_flush_rewrites()
 ```
 ### Usage
 
-The class creates a handfull of useful properties and methods that can be access through post type's instance variable.
+The class creates a handfull of useful properties and methods that can be access through post type's instance variable and can be use on template and admin files.
 
 #### Properties
 
