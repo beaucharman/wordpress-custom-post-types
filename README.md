@@ -101,7 +101,7 @@ For example:
 
 ```PHP
 
-PostType->get()
+$post_types = $PostType->get();
 
 ```
 
