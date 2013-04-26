@@ -13,7 +13,6 @@ Include `custom-post-types.php` in your `functions.php` file.
 Declare the various argument arrays to set the nerw post type up as needed (`$name` is required):
 
 ```PHP
-
 // Required
 $name = '';
 
@@ -47,14 +46,11 @@ $help = array(
     'message'      => ''
   )
 );
-
 ```
 Then create variable (for future refernce, but is not required) from an instance of the `LT3_Custom_Post_Type` class:
 
 ```PHP
-
 $PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
-
 ```
 
 ### Flush Rewrites
@@ -62,14 +58,12 @@ $PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
 If there are issues with permalinks and the new post types, even after flushing them in the administrator area (Settings > Permalinks > Save Changes) use the following function to flush permalink rewrites after creating custom post types and taxonomies.
 
 ```PHP
-
 add_action( 'init', 'lt3_post_type_and_taxonomy_flush_rewrites' );
 function lt3_post_type_and_taxonomy_flush_rewrites()
 {
   global $wp_rewrite;
   $wp_rewrite->flush_rules();
 }
-
 ```
 ### Usage
 
@@ -95,14 +89,12 @@ Get the absolute permalink to the post type's archive page.
 
 Get all entries assigned to this post type. Accepts an array of arguments, and a boolean value to retrieve just a single value (true, useful to use along side 'include' => $single_id) or an array of results (false).
 
-See the ([get_posts #Default_Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage)) codex reference for the list of possible arguments, and the [get_pages #Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return items.
+See the [get_posts #Default_Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [get_pages #Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return items.
 
 For example:
 
 ```PHP
-
 $post_types = $PostType->get();
-
 ```
 
 
