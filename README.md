@@ -87,7 +87,7 @@ Gets the absolute permalink to the post type's archive page.
 
 **$PostType->get()**
 
-Get all entries assigned to this post type. Accepts an array of arguments, and a boolean value to retrieve just a single value (true, useful to use along side 'include' => $single_id) or an array of results (false).
+Get all entries assigned to this post type. Accepts an array of arguments, and a boolean value to retrieve just a single value (true, useful to use along side `'include' => $single_id`) or an array of results (false).
 
 For example:
 
