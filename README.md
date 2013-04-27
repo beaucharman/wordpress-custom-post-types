@@ -1,8 +1,8 @@
 # WordPress Custom Post Types
 
-A PHP class to help register and maintain WordPress custom post types. It also comes with some rad built in properties and methods that can be used in templates to maintain clean code modular development.
+A PHP class to help register and maintain WordPress custom post types. It also comes with some rad built-in properties and methods that can be used in templates to maintain clean code and modular development.
 
-For more information about registering Post Types, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
+For more information about registering post types, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
 For information about setting up custom admin columns, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
@@ -47,7 +47,7 @@ $help = array(
   )
 );
 ```
-Then create a variable (for future refernce, but is not required) from an instance of the `LT3_Custom_Post_Type` class:
+Then create a variable (for future reference, but is not required) from an instance of the `LT3_Custom_Post_Type` class:
 
 ```PHP
 $PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
@@ -55,7 +55,7 @@ $PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
 
 ### Usage
 
-The post type class creates a handfull of useful properties and methods that can be accessed through post type's instance variable and can be used on template and admin files.
+The post type class creates a handfull of useful properties and methods that can be accessed through post type's instance variable and can be used in template and admin files.
 
 #### Properties
 
