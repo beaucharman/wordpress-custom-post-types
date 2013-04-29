@@ -17,11 +17,14 @@
  *  $PostType->get()
  *  $PostType->archive_link()
  *
- * For more information on registering post types:
- * http://codex.wordpress.org/Function_Reference/register_post_type
- *
  * To declare a custom post type, simply create a new instance of the
  * LT3_Custom_Post_Type class.
+ *
+ * Configuration:
+ * https://github.com/beaucharman/WordPress-Custom-Post-Types
+ *
+ * For more information on registering post types:
+ * http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
 /* ------------------------------------------------------------------------
