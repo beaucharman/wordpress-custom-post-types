@@ -87,7 +87,7 @@ $post_types = $PostType->get();
 
 See the [get_posts#Default_Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [get_pages#Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return values.
 
-**Working with custom taxonomies**
+####Working with Custom Taxonomies
 
 To get posts within (or maybe even not within) terms of particular taxonomies, you can use the [Tax Query](https://codex.wordpress.org/Class_Reference/WP_Query#Taxonomy_Parameters) option within your get function `$args`. For example:
 
