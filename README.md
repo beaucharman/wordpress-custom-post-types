@@ -55,7 +55,7 @@ $PostType = new LT3_Custom_Post_Type( $name, $labels, $options, $help );
 
 ### Usage
 
-The custom post types class creates a handfull of useful properties and methods that can be accessed through the post type's instance variable and can be used in template and admin files.
+The custom post type class creates a handfull of useful properties and methods that can be accessed through the post type's instance variable and can be used in template and admin files.
 
 #### Properties
 
