@@ -6,8 +6,8 @@
  * @version 2.0 | April 1st 2013
  * @package lt3
  * @author  Beau Charman | @beaucharman | http://beaucharman.me
- * @link    https://github.com/beaucharman/lt3
- * @license GNU http://www.gnu.org/licenses/lgpl.txt
+ * @link    https://github.com/beaucharman/WordPress-Custom-Post-Types
+ * @license MIT license
  *
  * Properties
  *  $PostType->name   | string

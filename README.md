@@ -6,6 +6,8 @@ For more information about registering post types, including a full list of opti
 
 For information about setting up custom admin columns for your new post type, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
+This class works well with the [WordPress Custom taxonomies class](https://github.com/beaucharman/https://github.com/beaucharman/WordPress-Custom-Taxonomies).
+
 ### Declaring New Post Types
 
 Include `custom-post-types.php` in your `functions.php` file.
@@ -85,7 +87,7 @@ $post_types = $PostType->get();
 
 **Note:** A declaration of `global $PostType;` might be required on some template files.
 
-See the [get_posts#Default_Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [get_pages#Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return values.
+See the [Get Posts => Default Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [Get Pages => Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return values.
 
 ####Working with Custom Taxonomies
 
