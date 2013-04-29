@@ -15,17 +15,16 @@ Include `custom-post-types.php` in your `functions.php` file.
 Declare the various argument arrays to setup the new post type as needed (`$name` is required):
 
 ```PHP
-// Required
+// required
 $name = '';
 
-// Optional
+// optional
 $labels = array(
   'label_singular' => '',
   'label_plural'   => '',
   'menu_label'     => ''
 );
 
-// Optional
 $options = array(
   'description'    => '',
   'public'         => true,
@@ -38,7 +37,6 @@ $options = array(
   'rewrite'        => true
 );
 
-// Optional
 $help = array(
   array(
     'message'      => ''
@@ -67,7 +65,7 @@ The post type slug.
 
 **$PostType->lables**
 
-A an array of the singular, plural and menu lables.
+An array of the singular, plural and menu lables.
 
 #### Methods
 

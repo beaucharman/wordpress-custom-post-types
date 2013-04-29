@@ -1,10 +1,9 @@
 <?php
 /**
- * Post Types
+ * Custom Post Types
  * ------------------------------------------------------------------------
- * post-types.php
+ * custom-post-types.php
  * @version 2.0 | April 1st 2013
- * @package lt3
  * @author  Beau Charman | @beaucharman | http://beaucharman.me
  * @link    https://github.com/beaucharman/WordPress-Custom-Post-Types
  * @license MIT license
