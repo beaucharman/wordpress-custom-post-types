@@ -2,9 +2,9 @@
 
 A PHP class to help register and maintain WordPress custom post types. It also comes with some rad built-in properties and methods that can be used in templates to maintain clean code and modular development.
 
-For more information about registering post types, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
+For more information about registering post types, including a full list of options, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
-For information about setting up custom admin columns, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
+For information about setting up custom admin columns for your new post type, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
 ### Declaring New Post Types
 
