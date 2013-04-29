@@ -95,15 +95,15 @@ To get posts within (or maybe even not within) terms of particular taxonomies, y
 $args = array(
   'tax_query' => array(
     array(
-      'taxonomy' => 'foo_category',
-      'field' => 'slug',
-      'terms' => array('bar', 'baz'),
+      'taxonomy'         => 'foo_category',
+      'field'            => 'slug',
+      'terms'            => array( 'bar', 'baz' ),
       'include_children' => true,
-      'operator' => 'IN'
+      'operator'         => 'IN'
     )
   )
 );
-$post_types = $PostType->get($args);
+$post_types = $PostType->get( $args );
 ```
 
 ### Flush Rewrites
