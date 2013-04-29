@@ -85,12 +85,13 @@ $post_types = $PostType->get();
 
 **Note:** A declaration of `global $PostType;` might be required on some template files.
 
+See the [get_posts#Default_Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [get_pages#Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return values.
+
 **Working with custom taxonomies**
 
 To get posts within (or maybe even not within) terms of particular taxonomies, you can use the [Tax Query](https://codex.wordpress.org/Class_Reference/WP_Query#Taxonomy_Parameters) option within your get function `$args`. For example:
 
 ```PHP
-
 $args = array(
   'tax_query' => array(
     array(
@@ -102,12 +103,8 @@ $args = array(
     )
   )
 );
-
 $post_types = $PostType->get($args);
-
 ```
-
-See the [get_posts#Default_Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [get_pages#Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return values.
 
 ### Flush Rewrites
 
