@@ -59,21 +59,21 @@ The custom post type class creates a handfull of useful properties and methods t
 
 #### Properties
 
-`$PostType->name`
+**`$PostType->name`**
 
 The post type slug.
 
-`$PostType->lables`
+**`$PostType->lables`**
 
 An array of the singular, plural and menu lables.
 
 #### Methods
 
-`$PostType->archive_link()`
+**`$PostType->archive_link()`**
 
 Gets the absolute permalink to the post type's archive page.
 
-`$PostType->get()`
+**`$PostType->get()`**
 
 Get all entries assigned to this post type. Accepts an array of arguments, and a boolean value to retrieve just a single value (true, useful to use along side `'include' => $single_id`) or an array of results (false).
 
