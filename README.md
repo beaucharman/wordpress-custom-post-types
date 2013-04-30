@@ -6,7 +6,7 @@ For more information about registering post types, including a full list of opti
 
 For information about setting up custom admin columns for your new post type, have a read of [this article](http://tareq.wedevs.com/2011/07/add-your-custom-columns-to-wordpress-admin-panel-tables/).
 
-This class works well with the [WordPress Custom taxonomies class](https://github.com/beaucharman/https://github.com/beaucharman/WordPress-Custom-Taxonomies).
+This class works well with the [WordPress Custom taxonomies class](https://github.com/beaucharman/wordpress-custom-taxonomies).
 
 ### Declaring New Post Types
 
