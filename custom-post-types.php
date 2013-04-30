@@ -152,11 +152,11 @@ class LT3_Custom_Post_Type
   {
     $args = array_merge(
       array(
-      'posts_per_page'  => -1,
-      'orderby'         => 'title',
-      'order'           => 'ASC',
-      'post_type'       => $this->name,
-      'post_status'     => 'publish'
+      'posts_per_page' => -1,
+      'orderby'        => 'title',
+      'order'          => 'ASC',
+      'post_type'      => $this->name,
+      'post_status'    => 'publish'
        ),
       $user_args
      );
