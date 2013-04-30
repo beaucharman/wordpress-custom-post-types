@@ -19,7 +19,7 @@
  * To declare a custom post type, simply create a new instance of the
  * LT3_Custom_Post_Type class.
  *
- * Configuration:
+ * Configuration guide:
  * https://github.com/beaucharman/WordPress-Custom-Post-Types
  *
  * For more information on registering post types:
