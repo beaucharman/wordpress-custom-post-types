@@ -59,11 +59,11 @@ The custom post type class creates a handfull of useful properties and methods t
 
 #### Properties
 
-**$PostType->name**
+`$PostType->name`
 
 The post type slug.
 
-**$PostType->lables**
+`$PostType->lables`
 
 An array of the singular, plural and menu lables.
 
