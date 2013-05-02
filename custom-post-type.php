@@ -5,7 +5,7 @@
  * custom-post-type.php
  * @version 2.0 | April 1st 2013
  * @author  Beau Charman | @beaucharman | http://beaucharman.me
- * @link    https://github.com/beaucharman/wordpress-custom-post-type
+ * @link    https://github.com/beaucharman/wordpress-custom-post-types
  * @license MIT license
  *
  * Properties
@@ -20,7 +20,7 @@
  * LT3_Custom_Post_Type class.
  *
  * Configuration guide:
- * https://github.com/beaucharman/wordpress-custom-post-type
+ * https://github.com/beaucharman/wordpress-custom-post-types
  *
  * For more information on registering post types:
  * http://codex.wordpress.org/Function_Reference/register_post_type
@@ -38,6 +38,7 @@ class LT3_Custom_Post_Type
 
   /**
    * Class constructor
+   *  ------------------------------------------------------------------------
    * __construct()
    * @param  $name     | string
    * @param  $labels   | array
