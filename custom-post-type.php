@@ -1,11 +1,11 @@
 <?php
 /**
- * Custom Post Types
+ * Custom Post Type
  * ------------------------------------------------------------------------
- * custom-post-types.php
+ * custom-post-type.php
  * @version 2.0 | April 1st 2013
  * @author  Beau Charman | @beaucharman | http://beaucharman.me
- * @link    https://github.com/beaucharman/wordpress-custom-post-types
+ * @link    https://github.com/beaucharman/wordpress-custom-post-type
  * @license MIT license
  *
  * Properties
@@ -20,14 +20,14 @@
  * LT3_Custom_Post_Type class.
  *
  * Configuration guide:
- * https://github.com/beaucharman/wordpress-custom-post-types
+ * https://github.com/beaucharman/wordpress-custom-post-type
  *
  * For more information on registering post types:
  * http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
 /* ------------------------------------------------------------------------
-   Custom post type class
+   Custom Post Type class
    ------------------------------------------------------------------------ */
 class LT3_Custom_Post_Type
 {

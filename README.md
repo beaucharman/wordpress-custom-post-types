@@ -4,11 +4,11 @@ A PHP class to help register and maintain WordPress custom post types. It also c
 
 For more information about registering post types, including a full list of options, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
-This class works well with the [WordPress Custom Taxonomies class](https://github.com/beaucharman/wordpress-custom-taxonomies). They were made for each other <3.
+This class works well with the [WordPress Custom Taxonomy class](https://github.com/beaucharman/wordpress-custom-taxonomy). They were made for each other <3.
 
 ### Declaring New Post Types
 
-Include `custom-post-types.php` in your `functions.php` file.
+Include `custom-post-type.php` in your `functions.php` file.
 
 Declare the various argument arrays to setup the new post type as needed (`$name` is required):
 
