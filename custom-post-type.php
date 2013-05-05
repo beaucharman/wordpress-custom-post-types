@@ -9,8 +9,8 @@
  * @license MIT license
  *
  * Properties
- *  $PostType->name   | string
- *  $PostType->lables | array
+ *  $PostType->name   {string}
+ *  $PostType->lables {array}
  *
  * Methods
  *  $PostType->get()
@@ -37,14 +37,14 @@ class LT3_Custom_Post_Type
   public $help;
 
   /**
-   * Class constructor
+   * Class Constructor
    *  ------------------------------------------------------------------------
    * __construct()
-   * @param  $name     | string
-   * @param  $labels   | array
-   * @param  $options  | array
-   * @param  $help     | array
-   * @return post_type | class instance
+   * @param  {string}   $name
+   * @param  {array}    $labels
+   * @param  {array}    $options
+   * @param  {array}    $help
+   * @return {instance} post type
    *  ------------------------------------------------------------------------ */
   public function __construct( $name, $labels = array(), $options = array(), $help = null )
   {
@@ -64,7 +64,7 @@ class LT3_Custom_Post_Type
   }
 
   /**
-   * Register custom post type
+   * Register Custom Post Type
    * ------------------------------------------------------------------------
    * register_custom_post_type()
    * @param  null
