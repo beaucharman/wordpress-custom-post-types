@@ -1,7 +1,7 @@
 <?php
 /**
  * Custom Post Type
- * ------------------------------------------------------------------------
+ * ========================================================================
  * custom-post-type.php
  * @version 2.0 | April 1st 2013
  * @author  Beau Charman | @beaucharman | http://beaucharman.me
@@ -26,9 +26,9 @@
  * http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
-/* ------------------------------------------------------------------------
+/* ========================================================================
    Custom Post Type class
-   ------------------------------------------------------------------------ */
+   ======================================================================== */
 class LT3_Custom_Post_Type
 {
   public $name;
@@ -38,14 +38,14 @@ class LT3_Custom_Post_Type
 
   /**
    * Class Constructor
-   *  ------------------------------------------------------------------------
+   *  ========================================================================
    * __construct()
    * @param  {string}   $name
    * @param  {array}    $labels
    * @param  {array}    $options
    * @param  {array}    $help
    * @return {instance} post type
-   *  ------------------------------------------------------------------------ */
+   *  ======================================================================== */
   public function __construct( $name, $labels = array(), $options = array(), $help = null )
   {
     $this->name    = $this->uglify_words( $name );
@@ -65,11 +65,11 @@ class LT3_Custom_Post_Type
 
   /**
    * Register Custom Post Type
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * register_custom_post_type()
    * @param  null
    * @return post_type
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function register_custom_post_type()
   {
     /* Create the labels */
@@ -112,13 +112,13 @@ class LT3_Custom_Post_Type
 
   /**
    * Add Custom Contextual Help
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * add_custom_contextual_help()
    * @param  $contextual_help
    * @param  $screen_id | integer
    * @param  $screen
    * @return $contextual_help
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function add_custom_contextual_help( $contextual_help, $screen_id, $screen )
   {
     foreach( $this->help as $help )
@@ -142,13 +142,13 @@ class LT3_Custom_Post_Type
 
   /**
    * Get
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * get()
    * @param  $user_args | array
    * @return post type data
    *
    * Get all entries assigned to this post type.
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function get( $user_args = array(), $single = false )
   {
     $args = array_merge(
@@ -171,11 +171,11 @@ class LT3_Custom_Post_Type
 
   /**
    * Archive Link
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * archive_link()
    * @param  none
    * @return string
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function archive_link()
   {
     return home_url( '/' . $this->name ) ;
@@ -183,13 +183,13 @@ class LT3_Custom_Post_Type
 
   /**
    * Prettify Words
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * prettify_words()
    * @param  $words | string
    * @return string
    *
    * Creates a pretty version of a string, like a pug version of a dog.
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function prettify_words( $words )
   {
     return ucwords( str_replace( '_', ' ', $words ) );
@@ -197,13 +197,13 @@ class LT3_Custom_Post_Type
 
   /**
    * Uglify Words
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * uglify_words()
    * @param  $words | string
    * @return string
    *
    * Creates a url firendly version of the given string.
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function uglify_words( $words )
   {
     return strToLower( str_replace( ' ', '_', $words ) );
@@ -211,13 +211,13 @@ class LT3_Custom_Post_Type
 
   /**
    * Plurify Words
-   * ------------------------------------------------------------------------
+   * ========================================================================
    * plurafy_words()
    * @param  $words | string
    * @return $words | string
    * Plurifies most common words. Not currently working proper nouns,
    * or more complex words, for example knife => knives, leaf => leaves.
-   * ------------------------------------------------------------------------ */
+   * ======================================================================== */
   public function plurafy_words( $words )
   {
     if ( strToLower( substr( $words, -1 ) ) == 'y' )
