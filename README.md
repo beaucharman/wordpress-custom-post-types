@@ -1,6 +1,6 @@
 # WordPress Custom Post Types
 
-A PHP class to help register and maintain WordPress custom post types. It also comes with some rad built-in properties and methods that can be used in templates to maintain clean code and modular development.
+> A PHP class to help register and maintain WordPress custom post types. It also comes with some rad built-in properties and methods that can be used in templates to maintain clean code and modular development.
 
 For more information about registering post types, including a full list of options, visit the [WordPress Codex](http://codex.wordpress.org/Function_Reference/register_post_type).
 
