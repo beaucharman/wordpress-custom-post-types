@@ -4,7 +4,7 @@
  * ========================================================================
  * custom-post-type.php
  * @version 2.0 | April 1st 2013
- * @author  Beau Charman | @beaucharman | http://beaucharman.me
+ * @author  Beau Charman | @beaucharman | http://www.beaucharman.me
  * @link    https://github.com/beaucharman/wordpress-custom-post-types
  * @license MIT license
  *
