@@ -49,10 +49,10 @@ class LT3_Custom_Post_Type
   public function __construct($name, $labels = array(), $options = array(), $help = null)
   {
     /* Set class values */
-    $this->name    = $this->uglify_words($name);
-    $this->labels  = $labels;
+    $this->name = $this->uglify_words($name);
+    $this->labels = $labels;
     $this->options = $options;
-    $this->help    = $help;
+    $this->help = $help;
 
     /* Create the labels */
     $this->labels['label_singular'] = (isset($this->labels['label_singular']))
@@ -154,14 +154,15 @@ class LT3_Custom_Post_Type
   {
     $args = array_merge(
       array(
-      'posts_per_page' => -1,
-      'orderby'        => 'title',
-      'order'          => 'ASC',
-      'post_type'      => $this->name,
-      'post_status'    => 'publish'
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'post_type'      => $this->name,
+        'post_status'    => 'publish'
       ),
       $user_args
     );
+
     if ($single)
     {
       $items = get_posts($args);
