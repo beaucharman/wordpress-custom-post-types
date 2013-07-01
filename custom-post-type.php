@@ -66,7 +66,7 @@ class LT3_Custom_Post_Type
     $this->labels['menu_label'] = (isset($this->labels['menu_label']))
       ? $this->labels['menu_label'] : $this->labels['label_plural'];
 
-    if (!post_type_exists($this->name))
+    if (! post_type_exists($this->name))
     {
       add_action('init', array(&$this, 'register_custom_post_type'));
       if ($this->help)
