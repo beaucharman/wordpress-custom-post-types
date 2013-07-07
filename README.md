@@ -8,9 +8,9 @@ This class works well with the [WordPress Custom Taxonomy class](https://github.
 
 ### Declaring New Post Types
 
-Include `custom-post-type.php` in your `functions.php` file.
+Include [`custom-post-type.php`](https://github.com/beaucharman/wordpress-custom-post-types/blob/master/custom-post-type.php) in your `functions.php` file, with something like `require_once(get_template_directory() . '/includes/custom-post-types.php');`.
 
-Declare the various argument arrays to setup the new post type as needed (`$name` is required):
+Declare the various argument arrays (within `funtions.php` or another initiating include file) to setup the new post type as needed (`$name` is required):
 
 ```PHP
 // required
