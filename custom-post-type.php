@@ -57,15 +57,29 @@ class LT3_Custom_Post_Type
     $this->help = $help;
 
     /**
-     * Create the labels
+     * Create the labels where needed
      */
-    $this->labels['label_singular'] = (isset($this->labels['label_singular']))
-      ? $this->labels['label_singular'] : $this->prettify_words($this->name);
-    $this->labels['label_plural'] = (isset($this->labels['label_plural']))
-      ? $this->labels['label_plural'] : $this->plurify_words($this->labels['label_singular']);
-    $this->labels['menu_label'] = (isset($this->labels['menu_label']))
-      ? $this->labels['menu_label'] : $this->labels['label_plural'];
+    /* Post type singluar label */
+    if (! isset($this->labels['label_singular'])) 
+    {
+      $this->labels['label_singular'] = $this->prettify_words($this->name)    
+    }
+    
+    /* Post type plural label */
+    if (! isset($this->labels['label_plural'])) 
+    {
+      $this->labels['label_plural'] = $this->plurify_words($this->labels['label_singular'])  
+    }
+    
+    /* Post type menu label */
+    if (! isset($this->labels['menu_label'])) 
+    {
+      $this->labels['menu_label'] = $this->labels['label_plural'] 
+    }
 
+    /**
+     * If the post type doesn't already exist, create it!
+     */
     if (! post_type_exists($this->name))
     {
       add_action('init', array(&$this, 'register_custom_post_type'));
@@ -85,6 +99,9 @@ class LT3_Custom_Post_Type
    * ======================================================================== */
   public function register_custom_post_type()
   {
+    /**
+     * Set up the post type labels
+     */
     $labels = array(
       'name'               => __($this->labels['label_plural']),
       'singular_name'      => __($this->labels['label_singular']),
@@ -100,7 +117,7 @@ class LT3_Custom_Post_Type
     );
 
     /**
-     * Configure the options
+     * Configure the post type options
      */
     $options = array_merge(
       array(
@@ -109,9 +126,9 @@ class LT3_Custom_Post_Type
         'menu_position' => 20,
         'has_archive'   => true,
         'rewrite'       => true
-     ),
+      ),
       $this->options
-   );
+    );
 
     /**
      * Register the new post type
