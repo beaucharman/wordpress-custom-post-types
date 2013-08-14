@@ -60,21 +60,21 @@ class LT3_Custom_Post_Type
      * Create the labels where needed
      */
     /* Post type singluar label */
-    if (! isset($this->labels['label_singular'])) 
+    if (! isset($this->labels['label_singular']))
     {
-      $this->labels['label_singular'] = $this->prettify_words($this->name)    
+      $this->labels['label_singular'] = $this->prettify_words($this->name);
     }
-    
+
     /* Post type plural label */
-    if (! isset($this->labels['label_plural'])) 
+    if (! isset($this->labels['label_plural']))
     {
-      $this->labels['label_plural'] = $this->plurify_words($this->labels['label_singular'])  
+      $this->labels['label_plural'] = $this->plurify_words($this->labels['label_singular']);
     }
-    
+
     /* Post type menu label */
-    if (! isset($this->labels['menu_label'])) 
+    if (! isset($this->labels['menu_label']))
     {
-      $this->labels['menu_label'] = $this->labels['label_plural'] 
+      $this->labels['menu_label'] = $this->labels['label_plural'];
     }
 
     /**
@@ -121,11 +121,11 @@ class LT3_Custom_Post_Type
      */
     $options = array_merge(
       array(
-        'labels'        => $labels,
-        'public'        => true,
-        'menu_position' => 20,
         'has_archive'   => true,
-        'rewrite'       => true
+        'labels'        => $labels,
+        'menu_position' => 20,
+        'public'        => true,
+        'rewrite'       => array('slug' => $this->get_slug())
       ),
       $this->options
     );
@@ -197,15 +197,34 @@ class LT3_Custom_Post_Type
   }
 
   /**
-   * Archive Link
+   * Archive URI
    * ========================================================================
-   * archive_link()
+   * archive_uri()
    * @param  none
    * @return string
    * ======================================================================== */
-  public function archive_link()
+  public function archive_uri($path = '')
   {
-    return home_url('/' . $this->name) ;
+    return home_url('/' . $this->get_slug() . '/' . $path);
+  }
+
+  /**
+   * Get Slug
+   * ========================================================================
+   * get_slug()
+   * @param  $name {string}
+   * @return string
+   * ======================================================================== */
+  public function get_slug($name = null)
+  {
+    if (! $name)
+    {
+      $name = $this->name;
+    }
+
+    return strtolower(
+      str_replace(' ', '-', str_replace('_', '-', $name))
+    );
   }
 
   /**
@@ -256,9 +275,6 @@ class LT3_Custom_Post_Type
     {
       return $words . 'es';
     }
-    else
-    {
-      return $words . 's';
-    }
+    return $words . 's';
   }
 }
