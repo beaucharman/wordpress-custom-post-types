@@ -14,7 +14,7 @@
  *
  * Methods
  *  $PostType->get()
- *  $PostType->archive_link()
+ *  $PostType->archive_uri()
  *
  * To declare a custom post type, simply create a new instance of the
  * LT3_Custom_Post_Type class.

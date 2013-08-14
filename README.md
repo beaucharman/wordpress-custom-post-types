@@ -67,9 +67,9 @@ An array of the singular, plural and menu lables.
 
 #### Methods
 
-**`$PostType->archive_link()`**
+**`$PostType->archive_uri()`**
 
-Gets the absolute permalink to the post type's archive page.
+Gets the URI to the post type's archive page.
 
 **`$PostType->get()`**
 
