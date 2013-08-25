@@ -45,7 +45,7 @@ class LT3_Custom_Post_Type
    * @param  {array}    $options
    * @param  {array}    $help
    * @return {instance} post type
-   *  ======================================================================== */
+   */
   public function __construct($name, $labels = array(), $options = array(), $help = null)
   {
     /**
@@ -96,7 +96,7 @@ class LT3_Custom_Post_Type
    * register_custom_post_type()
    * @param  null
    * @return post_type
-   * ======================================================================== */
+   */
   public function register_custom_post_type()
   {
     /**
@@ -144,7 +144,7 @@ class LT3_Custom_Post_Type
    * @param  $screen_id | integer
    * @param  $screen
    * @return $contextual_help
-   * ======================================================================== */
+   */
   public function add_custom_contextual_help($contextual_help, $screen_id, $screen)
   {
     foreach ($this->help as $help)
@@ -174,7 +174,7 @@ class LT3_Custom_Post_Type
    * @return post type data
    *
    * Get all entries assigned to this post type.
-   * ======================================================================== */
+   */
   public function get($user_args = array(), $single = false)
   {
     $args = array_merge(
@@ -202,7 +202,7 @@ class LT3_Custom_Post_Type
    * archive_uri()
    * @param  none
    * @return string
-   * ======================================================================== */
+   */
   public function archive_uri($path = '')
   {
     return home_url('/' . $this->get_slug() . '/' . $path);
@@ -214,7 +214,7 @@ class LT3_Custom_Post_Type
    * get_slug()
    * @param  $name {string}
    * @return string
-   * ======================================================================== */
+   */
   public function get_slug($name = null)
   {
     if (! $name)
@@ -235,7 +235,7 @@ class LT3_Custom_Post_Type
    * @return string
    *
    * Creates a pretty version of a string, like a pug version of a dog.
-   * ======================================================================== */
+   */
   public function prettify_words($words)
   {
     return ucwords(str_replace('_', ' ', $words));
@@ -249,7 +249,7 @@ class LT3_Custom_Post_Type
    * @return string
    *
    * Creates a url firendly version of the given string.
-   * ======================================================================== */
+   */
   public function uglify_words($words)
   {
     return strToLower(str_replace(' ', '_', $words));
@@ -264,7 +264,7 @@ class LT3_Custom_Post_Type
    *
    * Plurifies most common words. Not currently working proper nouns,
    * or more complex words, for example knife => knives, leaf => leaves.
-   * ======================================================================== */
+   */
   public function plurify_words($words)
   {
     if (strToLower(substr($words, -1)) == 'y')
