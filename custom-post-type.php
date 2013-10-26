@@ -83,6 +83,7 @@ class LT3_Custom_Post_Type
     if (! post_type_exists($this->name))
     {
       add_action('init', array(&$this, 'register_custom_post_type'));
+      
       if ($this->help)
       {
         add_action('contextual_help', array(&$this, 'add_custom_contextual_help'), 10, 3);
@@ -163,6 +164,7 @@ class LT3_Custom_Post_Type
         $contextual_help = $help['message'];
       }
     }
+    
     return $contextual_help;
   }
 
@@ -193,6 +195,7 @@ class LT3_Custom_Post_Type
       $items = get_posts($args);
       return $items[0];
     }
+    
     return get_posts($args);
   }
 
@@ -271,10 +274,12 @@ class LT3_Custom_Post_Type
     {
       return substr_replace($words, 'ies', -1);
     }
+    
     if (strToLower(substr($words, -1)) == 's')
     {
       return $words . 'es';
     }
+    
     return $words . 's';
   }
 }
