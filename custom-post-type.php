@@ -1,9 +1,9 @@
 <?php
 /**
- * Custom Post Type
+ * Bamboo - Custom Post Type
  * ========================================================================
- * custom-post-type.php
- * @version   2.0 | June 30th 2013
+ * wordpress-custom-post-type.php
+ * @version   3.0 | November 10th 2013
  * @author    Beau Charman | @beaucharman | http://www.beaucharman.me
  * @link      https://github.com/beaucharman/wordpress-custom-post-types
  * @license   MIT license
@@ -16,7 +16,7 @@
  *  $PostType->get()
  *
  * To declare a custom post type, simply create a new instance of the
- * LT3_Custom_Post_Type class.
+ * Bamboo_Custom_Post_Type class.
  *
  * Configuration guide:
  * https://github.com/beaucharman/wordpress-custom-post-types
@@ -28,7 +28,7 @@
 /* ========================================================================
    Custom Post Type class
    ======================================================================== */
-class LT3_Custom_Post_Type
+class Bamboo_Custom_Post_Type
 {
   public $name;
   public $labels;
@@ -114,7 +114,7 @@ class LT3_Custom_Post_Type
 
       if ($this->icon)
       {
-        add_action('admin_head', array(&$this, 'icons'));
+        add_action('admin_head', array(&$this, 'icon_style'));
       }
     }
   }
@@ -178,7 +178,7 @@ class LT3_Custom_Post_Type
   {
     foreach ($this->help as $help)
     {
-      if (!$help['context'])
+      if (! $help['context'])
       {
         $context = $this->name;
       }
@@ -305,7 +305,7 @@ class LT3_Custom_Post_Type
    * @param  null
    * @return icon styles
    */
-  public function icons() { ?>
+  public function icon_style() { ?>
     <style rel="stylesheet" media="screen">
       #menu-posts-<?php echo $this->name; ?> .wp-menu-image:before,
       #icon-edit[class*="posts-<?php echo $this->name; ?>"]:before {
