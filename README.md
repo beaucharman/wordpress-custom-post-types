@@ -1,4 +1,5 @@
-# Bamboo - WordPress Custom Post Types
+# Bamboo
+### WordPress Custom Post Types
 
 > Bamboo - WordPress Custom Post Types is a PHP class to help register and maintain WordPress custom post types. It also comes with some rad built-in properties and methods that can be used in templates to maintain clean code and modular development.
 
@@ -112,7 +113,7 @@ $args = array(
   )
 );
 
-$post_types = $PostType->get( $args );
+$post_types = $PostType->get($args);
 ```
 
 ### Flush Rewrites
@@ -120,8 +121,8 @@ $post_types = $PostType->get( $args );
 If there are issues with permalinks and the new post types, even after flushing them in the administrator area (Settings > Permalinks > Save Changes), use the following function to flush permalink rewrites for new custom post types and taxonomies.
 
 ```PHP
-add_action( 'init', 'bamboo_post_type_and_taxonomy_flush_rewrites' );
-function bamboo_post_type_and_taxonomy_flush_rewrites()
+add_action('init', 'bamboo_flush_rewrites');
+function bamboo_flush_rewrites()
 {
   global $wp_rewrite;
   $wp_rewrite->flush_rules();
