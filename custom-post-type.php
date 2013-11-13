@@ -1,6 +1,6 @@
 <?php
 /**
- * Bamboo - Custom Post Type
+ * Bamboo - WordPress Custom Post Type
  * ========================================================================
  * wordpress-custom-post-type.php
  * @version   3.0 | November 10th 2013
@@ -25,25 +25,26 @@
  * http://codex.wordpress.org/Function_Reference/register_post_type
  */
 
+
 /* ========================================================================
    Custom Post Type class
    ======================================================================== */
+
+
 class Bamboo_Custom_Post_Type
 {
+
   public $name;
   public $labels;
   public $options;
   public $icon;
   public $help;
 
+
   /**
    * Class Constructor
    *  ========================================================================
-   * __construct()
-   * @param  {string}   $name
-   * @param  {array}    $labels
-   * @param  {array}    $options
-   * @param  {array}    $help
+   * @param  {array}   $args
    * @return {instance} post type
    */
   public function __construct($args)
@@ -119,12 +120,12 @@ class Bamboo_Custom_Post_Type
     }
   }
 
+
   /**
    * Register Custom Post Type
    * ========================================================================
-   * register_custom_post_type()
-   * @param  null
-   * @return post_type
+   * @param  {null}
+   * @return post type
    */
   public function register_custom_post_type()
   {
@@ -165,12 +166,12 @@ class Bamboo_Custom_Post_Type
     register_post_type($this->name, $options);
   }
 
+
   /**
    * Add Custom Contextual Help
    * ========================================================================
-   * add_custom_contextual_help()
    * @param  $contextual_help
-   * @param  $screen_id | integer
+   * @param  $screen_id
    * @param  $screen
    * @return $contextual_help
    */
@@ -196,12 +197,13 @@ class Bamboo_Custom_Post_Type
     return $contextual_help;
   }
 
+
   /**
    * Get
    * ========================================================================
-   * get()
-   * @param  $user_args | array
-   * @return post type data
+   * @param  {array}   $user_args
+   * @param  {boolean} $single
+   * @return {array}   post type data
    *
    * Get all entries assigned to this post type.
    */
@@ -228,12 +230,12 @@ class Bamboo_Custom_Post_Type
     return $items;
   }
 
+
   /**
    * Get Slug
    * ========================================================================
-   * get_slug()
-   * @param  $name {string}
-   * @return string
+   * @param  {string} $name
+   * @return {string}
    */
   public function get_slug($name = null)
   {
@@ -245,12 +247,12 @@ class Bamboo_Custom_Post_Type
     return strtolower(str_replace(' ', '-', str_replace('_', '-', $name)));
   }
 
+
   /**
    * Prettify Words
    * ========================================================================
-   * prettify_words()
-   * @param  $words | string
-   * @return string
+   * @param  {string} $words
+   * @return {string}
    *
    * Creates a pretty version of a string, like a pug version of a dog.
    */
@@ -259,12 +261,12 @@ class Bamboo_Custom_Post_Type
     return ucwords(str_replace('_', ' ', $words));
   }
 
+
   /**
    * Uglify Words
    * ========================================================================
-   * uglify_words()
-   * @param  $words | string
-   * @return string
+   * @param  {string} $words
+   * @return {string}
    *
    * Creates a url firendly version of the given string.
    */
@@ -273,12 +275,12 @@ class Bamboo_Custom_Post_Type
     return strToLower(str_replace(' ', '_', $words));
   }
 
+
   /**
    * Plurify Words
    * ========================================================================
-   * plurify_words()
-   * @param  $words | string
-   * @return $words | string
+   * @param  {string} $words
+   * @return {string}
    *
    * Plurifies most common words. Not currently working proper nouns,
    * or more complex words, for example knife => knives, leaf => leaves.
@@ -298,12 +300,12 @@ class Bamboo_Custom_Post_Type
     return $words . 's';
   }
 
+
   /**
-   * Icons
+   * Icon Style
    * ========================================================================
-   * icons()
-   * @param  null
-   * @return icon styles
+   * @param  {null}
+   * @return {output} html
    */
   public function icon_style() { ?>
     <style rel="stylesheet" media="screen">
@@ -331,13 +333,13 @@ class Bamboo_Custom_Post_Type
     </style>
   <?php }
 
+
   /**
    * Get Font Awesome
    * http://fortawesome.github.io/Font-Awesome/
    * ========================================================================
-   * get_font_awesome()
-   * @param  null
-   * @return icon styles
+   * @param  {null}
+   * @return {output} html
    */
   static function get_font_awesome()
   {
