@@ -27,7 +27,7 @@ $args['labels'] = array(
 $args['options'] = array(
   'public'         => true,
   'hierarchical'   => false,
-  'supports'       => array('title', editor', 'thumbnail'),
+  'supports'       => array('title', 'editor', 'thumbnail'),
   'has_archive'    => true
 );
 
