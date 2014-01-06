@@ -31,7 +31,7 @@ $args['options'] = array(
   'has_archive'    => true
 );
 
-$args['icon'] = ''; // The Unicode of the desired font
+$args['menu_icon'] = ''; // The Unicode of the desired font
 
 $args['help'] = array(
   array(
