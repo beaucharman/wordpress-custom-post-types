@@ -19,9 +19,9 @@ $args['name'] = '';
 
 // optional
 $args['labels'] = array(
-  'label_singular' => '',
-  'label_plural'   => '',
-  'menu_label'     => ''
+  'singular' => '',
+  'plural'   => '',
+  'menu'     => ''
 );
 
 $args['options'] = array(
