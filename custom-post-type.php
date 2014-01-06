@@ -64,11 +64,11 @@ class Bamboo_Custom_Post_Type
 
     $args = array_merge(
       array(
-        'name'    => $this->uglify_words($name),
-        'labels'  => array(),
-        'options' => array(),
-        'icon'    => null,
-        'help'    => null
+        'name'      => $this->uglify_words($name),
+        'labels'    => array(),
+        'options'   => array(),
+        'menu_icon' => null,
+        'help'      => null
       ),
       $args
     );
@@ -76,7 +76,7 @@ class Bamboo_Custom_Post_Type
     $this->name = $args['name'];
     $this->labels = $args['labels'];
     $this->options = $args['options'];
-    $this->icon = $args['icon'];
+    $this->icon = $args['menu_icon'];
     $this->help = $args['help'];
 
     /**
@@ -153,7 +153,8 @@ class Bamboo_Custom_Post_Type
       array(
         'has_archive'   => true,
         'labels'        => $labels,
-        'menu_position' => 5,
+        'menu_icon'     => '',
+        'menu_position' => 4,
         'public'        => true,
         'rewrite'       => array('slug' => $this->get_slug())
       ),
@@ -309,27 +310,10 @@ class Bamboo_Custom_Post_Type
    */
   public function icon_style() { ?>
     <style rel="stylesheet" media="screen">
-      #menu-posts-<?php echo $this->name; ?> .wp-menu-image:before,
-      #icon-edit[class*="posts-<?php echo $this->name; ?>"]:before {
-        content: "\<?php echo $this->icon; ?>";
-        font-family: 'FontAwesome' !important;
-        font-size: 15px !important;
-        position: absolute;
-      }
-      #menu-posts-<?php echo $this->name; ?> .wp-menu-image:before {
-        left: 7px;
-        top: 5px;
-      }
-      #icon-edit[class*="posts-<?php echo $this->name; ?>"]:before {
-        font-size: 34px !important;
-        left: 5px;
-        top: 9px;
-      }
-      #menu-posts-<?php echo $this->name; ?> .wp-menu-image,
-      #icon-edit[class*="posts-<?php echo $this->name; ?>"] {
-        background: none;
-        position: relative;
-      }
+    #adminmenu .menu-icon-<?php echo $this->name; ?> div.wp-menu-image:before {
+      font-family: 'FontAwesome' !important;
+      content: '\<?php echo $this->icon; ?>';
+    }
     </style>
   <?php }
 
@@ -344,11 +328,10 @@ class Bamboo_Custom_Post_Type
   static function get_font_awesome()
   {
     add_action('admin_head', 'font_awesome_icons');
-    add_action('wp_head', 'font_awesome_icons');
-
+    
     function font_awesome_icons()
     {
-      echo '<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">';
+      echo '<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">';
     }
   }
 }
