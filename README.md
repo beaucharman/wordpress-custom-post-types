@@ -85,11 +85,11 @@ $post_types = $PostType->get();
 
 See the [Get Posts => Default Usage](http://codex.wordpress.org/Template_Tags/get_posts#Default_Usage) codex reference for the list of possible arguments, and the [Get Pages => Return](http://codex.wordpress.org/Function_Reference/get_pages#Return) codex reference for the list of return values.
 
-#### Static Method
+#### Custom Icon
 
 **`get_font_awesome()`**
 
-To utilise the *Font* feature of this class, *[Font Awesome](http://fortawesome.github.io/Font-Awesome/)* needs to be reference, and there is nice helper function included in Bamboo that will include *Font Awesome* in the admin for you. Just call the method before declareing any post types:
+To utilise the *menu_icon* feature of this class, *[Font Awesome](http://fortawesome.github.io/Font-Awesome/)* needs to be reference, and there is nice helper function included in Bamboo that will include *Font Awesome* in the admin for you. Just call the method before declareing any post types:
 
 ```PHP
 /* Include Font Awesome */
