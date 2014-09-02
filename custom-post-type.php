@@ -315,19 +315,18 @@ class Bamboo_Custom_Post_Type
 
 
 	/**
-	 * Icon Style
-	 * ========================================================================
-	 * @param  {null}
-	 * @return {output} html
-	 */
-	public function icon_style() { ?>
-	<style rel="stylesheet" media="screen">
-		#adminmenu .menu-icon-<?php echo $this->name; ?> div.wp-menu-image:before {
-			font-family: 'FontAwesome' !important;
-			content: '\<?php echo $this->icon; ?>';
-		}
-	</style>
-	<?php }
+   	* Icon Style
+   	* ========================================================================
+   	* @param  {null}
+   	* @return {output} html
+   	*/
+  	public function icon_style() { ?>
+    		<style rel="stylesheet" media="screen">
+    			#adminmenu .menu-icon-<?php echo strtolower(str_replace(' ', '', $this->name) ) ; ?> div.wp-menu-image:before {
+      				content: '\<?php echo $this->icon; ?>';
+    			}
+    		</style>
+  	<?php }
 
 
 
